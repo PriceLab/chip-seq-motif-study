@@ -1,5 +1,6 @@
 library(RPostgreSQL)
 library(FimoClient)
+library(MotifDb)
 pfms <- as.list(query(MotifDb, c("sapiens", "TEAD1", "jaspar2018", "MA0090.2")))
 length(pfms)
 fc <- FimoClient("localhost", 60010)
