@@ -1,11 +1,11 @@
 library(RPostgreSQL)
 library(FimoClient)
+library(MotifDb)
 
 pfms <- as.list(query(MotifDb, c("sapiens", "TEAD1", "jaspar2018", "MA0090.2")))
 length(pfms)
 fc <- FimoClient("khaleesi", 60010)
 db <- dbConnect(PostgreSQL(), user= "trena", password="trena", dbname="hg38", host="khaleesi")
-
 tf <- "TEAD1"
 chrom <- "chr19"
 
@@ -24,6 +24,7 @@ end.loc <- 58617616
 query <- sprintf("select * from chipseq where tf='%s' AND chrom='%s' AND start >= %d AND endpos <= %d", tf, chrom, start.loc, end.loc)
 tbl.tf <- dbGetQuery(db, query)
 dim(tbl.tf)
+
 
 tbl.tf.adjusted <- tbl.tf[, c("chrom", "peakStart", "peakEnd")]
 colnames(tbl.tf.adjusted) <- c("chrom", "start", "end")
@@ -49,8 +50,8 @@ printf("found motif match for %d/%d ChIP hits (%5.2f%%)",
        chips.matched, nrow(tbl.tf.adjusted), 100 * chips.matched/nrow(tbl.tf.adjusted))
 printf("-log10(fimo pValue) range of %f %f %f %f %f",
        dist[1], dist[2], dist[3], dist[4], dist[5])
+
 fimo.pValScores.withFailures <- c(fimo.pValScores, rep(-1, chips.unmatched))
 hist(fimo.pValScores.withFailures,
      main=sprintf("JASPAR TEAD1 FIMO motif match to ChIP hits\n with %d failures (chr19)", chips.unmatched),
      xlab="-log10(FIMO pValue)")
-
