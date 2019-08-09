@@ -80,8 +80,11 @@ retrieveMatches("CTCF", "MA0139.1", "chr15", start.loc=39109648, end.loc=3911046
 retrieveMatches("CTCF", "MA0139.1", "chr3", start.loc=184278744, end.loc=184279631, displayHistogram=FALSE, peakMode="broad", .05)
 #Find a match of the CTCF motif to the DNA sequence in that region
 
-#RESULTS: 
-http://meme-suite.org/opal-jobs/appFIMO_5.0.41565285676197436389089/fimo.html
+#RESULTS: 2 hits for chr15 DNA regions, 4 hits for chr3 DNA regions
+chr15: 
+http://meme-suite.org/opal-jobs/appFIMO_5.0.41565285676197436389089/fimo.html 
+
+chr3: 
 http://meme-suite.org/opal-jobs/appFIMO_5.0.41565285889843-1673161087/fimo.html
 
 
