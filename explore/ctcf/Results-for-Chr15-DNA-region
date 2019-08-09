@@ -5,3 +5,6 @@ MA0139.1	CTCF	hg19:chr15:39109648-39110469	394	412	+	8.86885	6.29e-05	0.0487	TCG
 # FIMO (Find Individual Motif Occurrences): Version 5.0.4 compiled on Jan 26 2019 at 03:53:39
 # The format of this file is described at http://meme-suite.org//doc/fimo-output-format.html.
 # fimo --oc . --verbosity 1 --thresh 1.0E-4 MA0139.1.meme chr15_39109648-39110469.fasta
+
+# ChIP-seq region used: chr15_ start.loc= 39109648  end.loc= 39110469 
+# score associated: 1000
