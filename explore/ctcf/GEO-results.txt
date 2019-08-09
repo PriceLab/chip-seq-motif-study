@@ -1,3 +1,4 @@
+Experimental data released from the past year (36 results): 
 
 1. ChIP-seq of H3K27ac and CTCF in primary glioblastoma cultures
 (Submitter supplied) We characterize H3K27ac and CTCF profiles of three primary glioblastoma cultures, and use them to bolster Hi-C datasets.
