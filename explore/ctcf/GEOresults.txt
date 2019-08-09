@@ -1,0 +1,291 @@
+
+1. ChIP-seq of H3K27ac and CTCF in primary glioblastoma cultures
+(Submitter supplied) We characterize H3K27ac and CTCF profiles of three primary glioblastoma cultures, and use them to bolster Hi-C datasets.
+Organism:	Homo sapiens
+Type:		Genome binding/occupancy profiling by high throughput sequencing
+Platform: GPL18573 18 Samples
+FTP download: GEO (BED, BROADPEAK, NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE121nnn/GSE121601/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA497855
+Series		Accession: GSE121601	ID: 200121601
+
+2. An alternative CTCF isoform antagonizes canonical CTCF occupancy and changes chromatin architecture to promote apoptosis
+(Submitter supplied) CTCF plays key roles in gene regulation, chromatin insulation, imprinting, X chromosome inactivation and organizing the higher-order chromatin architecture of mammalian genomes. Previous studies have mainly focused on the roles of the canonical CTCF isoform. Here, we explore the functions of an alternatively spliced human CTCF isoform in which exons 3 and 4 are skipped, producing a shorter isoform (CTCF-s). more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing; Genome binding/occupancy profiling by high throughput sequencing
+Platforms: GPL18573 GPL20795 30 Samples
+FTP download: GEO (BW, HIC, NARROWPEAK, TSV) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE108nnn/GSE108869/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA428981
+Series		Accession: GSE108869	ID: 200108869
+
+3. CRISPR-mediated deletion of prostate cancer risk-associated CTCF loop anchors identifies repressive chromatin loops
+(Submitter supplied) Background: Recent genome-wide association studies (GWAS) have identified more than 100 loci associated with increased risk of prostate cancer, most of which are in non-coding regions of the genome. Understanding the function of these non-coding risk loci is critical to elucidate the genetic susceptibility to prostate cancer. Results: We generated genome-wide regulatory element maps and performed genome-wide chromosome confirmation capture assays (in situ Hi-C) in normal and tumorigenic prostate cells. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing; Genome binding/occupancy profiling by high throughput sequencing; Other
+Platforms: GPL9052 GPL21290 GPL11154 32 Samples
+FTP download: GEO (BED, GFF, NARROWPEAK, TAB, TXT, XLS) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE118nnn/GSE118514/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA485892
+Series		Accession: GSE118514	ID: 200118514
+
+4. G583 CTCF IP, replicate 2
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439937/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912156
+Sample		Accession: GSM3439937	ID: 303439937
+
+5. G583 CTCF IP, replicate 1
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439936/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912155
+Sample		Accession: GSM3439936	ID: 303439936
+
+6. G567 CTCF IP, replicate 2
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439934/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912153
+Sample		Accession: GSM3439934	ID: 303439934
+
+7. G567 CTCF IP, replicate 1
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439933/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912152
+Sample		Accession: GSM3439933	ID: 303439933
+
+8. G523 CTCF IP, replicate 2
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439931/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912150
+Sample		Accession: GSM3439931	ID: 303439931
+
+9. G523 CTCF IP, replicate 1
+Organism:	Homo sapiens
+Source name:	primary GBM cell culture
+Platform: GPL18573 Series: GSE121601 
+FTP download: GEO (NARROWPEAK, TDF) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3439nnn/GSM3439930/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4912149
+Sample		Accession: GSM3439930	ID: 303439930
+
+10. CTCF_HUDEP2_ChIP
+Organism:	Homo sapiens
+Source name:	human umbilical cord blood-derived erythroid progenitor (HUDEP)
+Platform: GPL18573 Series: GSE104676 
+FTP download: GEO (BW, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3671nnn/GSM3671075/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX5522009
+Sample		Accession: GSM3671075	ID: 303671075
+
+11. PWS_iPSC_2_ChIP-seq
+Organism:	Homo sapiens
+Source name:	Prader-Willi Syndrome iPSC, rep 2
+Platform: GPL18573 Series: GSE117283 
+FTP download: GEO (BIGWIG, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3290nnn/GSM3290417/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4403298
+Sample		Accession: GSM3290417	ID: 303290417
+
+12. PWS_iPSC_1_ChIP-seq
+Organism:	Homo sapiens
+Source name:	Prader-Willi Syndrome iPSC, rep 1
+Platform: GPL18573 Series: GSE117283 
+FTP download: GEO (BIGWIG, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3290nnn/GSM3290415/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4403296
+Sample		Accession: GSM3290415	ID: 303290415
+
+13. CTCF – no stress - IP rep2
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045110/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800709
+Sample		Accession: GSM3045110	ID: 303045110
+
+14. CTCF – 1h 110 mM NaCl - IP rep1
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045109/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800708
+Sample		Accession: GSM3045109	ID: 303045109
+
+15. CTCF – 7.5min 110 mM NaCl - IP rep1
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045108/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800707
+Sample		Accession: GSM3045108	ID: 303045108
+
+16. CTCF - no stress - IP rep1
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045107/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800706
+Sample		Accession: GSM3045107	ID: 303045107
+
+17. CTCF – 1h 110 mM NaCl + 1h isotonic + triptolide pre-treatment
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415549/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792906
+Sample		Accession: GSM3415549	ID: 303415549
+
+18. CTCF – 1h 110 mM NaCl + 1h isotonic
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415548/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792905
+Sample		Accession: GSM3415548	ID: 303415548
+
+19. CTCF – 1h 110 mM NaCl + triptolide
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415547/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792904
+Sample		Accession: GSM3415547	ID: 303415547
+
+20. CTCF – 1h 110 mM NaCl
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415546/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792903
+Sample		Accession: GSM3415546	ID: 303415546
+
+21. CTCF – no stress + triptolide pre-treatment
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415545/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792902
+Sample		Accession: GSM3415545	ID: 303415545
+
+22. CTCF – no stress
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL18573 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3415nnn/GSM3415544/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4792901
+Sample		Accession: GSM3415544	ID: 303415544
+
+23. GM ChIP CTCF yc_001_01_01_chipseq
+Organism:	Homo sapiens
+Source name:	GM
+Platform: GPL18573 Series: GSE109229 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3417nnn/GSM3417113/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4799461
+Sample		Accession: GSM3417113	ID: 303417113
+
+24. Group14_FULVR_C70_CTCF (ChIP-Seq)
+Organism:	Homo sapiens
+Source name:	breast cancer cells
+Platform: GPL11154 Series: GSE104983 GSE104988 
+FTP download: GEO (BW, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3329nnn/GSM3329935/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4547416
+Sample		Accession: GSM3329935	ID: 303329935
+
+25. Group14_FULVR_CTCF (ChIP-Seq)
+Organism:	Homo sapiens
+Source name:	breast cancer cells
+Platform: GPL11154 Series: GSE104983 GSE104988 
+FTP download: GEO (BW, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3329nnn/GSM3329934/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4547415
+Sample		Accession: GSM3329934	ID: 303329934
+
+26. Group14_MCF7_C70_CTCF (ChIP-Seq)
+Organism:	Homo sapiens
+Source name:	breast cancer cells
+Platform: GPL11154 Series: GSE104983 GSE104988 
+FTP download: GEO (BW, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3329nnn/GSM3329932/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4547413
+Sample		Accession: GSM3329932	ID: 303329932
+
+27. Group14_MCF7_CTCF (ChIP-Seq)
+Organism:	Homo sapiens
+Source name:	breast cancer cells
+Platform: GPL11154 Series: GSE104983 GSE104988 
+FTP download: GEO (BW, NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3329nnn/GSM3329931/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4547412
+Sample		Accession: GSM3329931	ID: 303329931
+
+28. CTCF – 7.5min 110 mM NaCl - IP rep2
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045111/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800710
+Sample		Accession: GSM3045111	ID: 303045111
+
+29. CTCF – 30min 110 mM NaCl - IP rep2
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045112/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800711
+Sample		Accession: GSM3045112	ID: 303045112
+
+30. CTCF – 1h 110 mM NaCl - IP rep2
+Organism:	Homo sapiens
+Source name:	T47D whole cell
+Platform: GPL16791 Series: GSE111923 GSE111924 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3045nnn/GSM3045113/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX3800712
+Sample		Accession: GSM3045113	ID: 303045113
+
+31. GM04025_CTCF_IP_Rep2
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211741/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284012
+Sample		Accession: GSM3211741	ID: 303211741
+
+32. GM04025_CTCF_IP_Rep1
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211740/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284011
+Sample		Accession: GSM3211740	ID: 303211740
+
+33. GM09237_CTCF_IP_Rep2
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211737/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284008
+Sample		Accession: GSM3211737	ID: 303211737
+
+34. GM09237_CTCF_IP_Rep1
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211736/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284007
+Sample		Accession: GSM3211736	ID: 303211736
+
+35. GM09236_CTCF_IP_Rep2
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211733/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284004
+Sample		Accession: GSM3211733	ID: 303211733
+
+36. GM09236_CTCF_IP_Rep1
+Organism:	Homo sapiens
+Source name:	B-lymphocytes
+Platform: GPL18573 Series: GSE111170 
+FTP download: GEO (NARROWPEAK) ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3211nnn/GSM3211732/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRX4284003
+Sample		Accession: GSM3211732	ID: 303211732
