@@ -70,7 +70,7 @@ if (displayHistogram) {
 }
 }
 tbl.broadPeaks <- read.table(gzfile("GSM1010734_hg19_wgEncodeHaibTfbsMcf7CtcfcV0422111PkRep1.broadPeak"), header= TRUE) #reading the data we have
-tbl.broadPeaks 
+head(tbl.broadPeaks)
 colnames(tbl.broadPeaks) <- c("chrom", "start", "end", "name", "score") #we are getting the columns that we want from the tbl
 fivenum(tbl.broadPeaks$score) #summarizes the table in five numbers (minimum,lower-hinge, median, upper-hinge, maximum)
 tbl.best <- subset(tbl.broadPeaks, score == max(tbl.broadPeaks$score)) #Find the highest scoring ChIP-seq hit reported in the data
