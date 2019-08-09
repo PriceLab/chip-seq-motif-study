@@ -1,0 +1,7 @@
+motif_id	motif_alt_id	sequence_name	start	stop	strand	score	p-value	q-value	matched_sequence
+MA0139.1	CTCF	hg19:chr15:39109648-39110469	430	448	+	19.5738	1.53e-07	0.000236	GTTCCAGCAGGGGGCGGCC
+MA0139.1	CTCF	hg19:chr15:39109648-39110469	394	412	+	8.86885	6.29e-05	0.0487	TCGGCCCTAGGTGTCACTG
+
+# FIMO (Find Individual Motif Occurrences): Version 5.0.4 compiled on Jan 26 2019 at 03:53:39
+# The format of this file is described at http://meme-suite.org//doc/fimo-output-format.html.
+# fimo --oc . --verbosity 1 --thresh 1.0E-4 MA0139.1.meme chr15_39109648-39110469.fasta
