@@ -6,3 +6,7 @@ MA0139.1	CTCF	hg38:chr12:69156315-69158351	799	817	+	8.21311	8.31e-05	0.108	GGAC
 # FIMO (Find Individual Motif Occurrences): Version 5.0.5 compiled on Jul 15 2019 at 00:31:54
 # The format of this file is described at http://meme-suite.org//doc/fimo-output-format.html.
 # fimo --oc . --verbosity 1 --thresh 1.0E-4 MA0139.1.meme chr12_69156315-69158351.fasta
+
+# ChIP-seq region used: chr12_ start.loc= 69156315  end.loc= 69158351 
+# score associated: 674536
+# Experimental data obtained from GEO (GSM3439936), G583 CTCF IP, replicate 1   ID: 303439936 (number 5 on the uploaded list)
