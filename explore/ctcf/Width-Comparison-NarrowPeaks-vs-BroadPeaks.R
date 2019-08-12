@@ -1,6 +1,9 @@
 #Narrow peak Experimental data obtained from GEO (GSM3439936), G583 CTCF IP, replicate 1   ID: 303439936 (number 5 on the GEO list on Github)
 
-unzippedTables <- lapply (c("GSM3439936_G583_ctcf_ip_rep1_WRT_G583_ctcf_input_rep1_peaks.narrowPeak","GSM1010734_hg19_wgEncodeHaibTfbsMcf7CtcfcV0422111PkRep1.broadPeak"), gzfile)
+files <- c("GSM3439936_G583_ctcf_ip_rep1_WRT_G583_ctcf_input_rep1_peaks.narrowPeak","GSM1010734_hg19_wgEncodeHaibTfbsMcf7CtcfcV0422111PkRep1.broadPeak")
+stopifnot(lapply(files, file.exists))
+
+unzippedTables <- lapply (files, gzfile)
 tables <- lapply(unzippedTables,read.table)
 lapply(tables,head)
 tbl.np <- tables[[1]]
