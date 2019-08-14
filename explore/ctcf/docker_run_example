@@ -1,3 +1,6 @@
 #docker run example
+#Link to download file: 
+#http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeUwRepliSeq/wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam
+
 
 docker run -v $PWD:/data/ fooliu/macs2 callpeak -t /data/wgEncodeUwRepliSeqBg02esG1bAlnRep1.bam
