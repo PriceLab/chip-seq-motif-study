@@ -14,3 +14,4 @@ MA0139.1	CTCF	hg38:chr11:189622-190360	508	526	+	8.06557	8.83e-05	0.0104	CTGGCAG
 # FIMO (Find Individual Motif Occurrences): Version 5.0.4 compiled on Jan 26 2019 at 03:53:39
 # The format of this file is described at http://meme-suite.org//doc/fimo-output-format.html.
 # fimo --oc . --verbosity 1 --thresh 1.0E-4 MA0139.1.meme chr11_189622-190360.fasta
+
