@@ -38,8 +38,8 @@ igvBam <- function(FileBam, tf, chromosome, narrowPeakFilefromMACS2, broadPeakFi
   tbl.Np.Chrom <- tbl.Np[(grep(chromosome, tbl.Np$chrom)[1]): ((grep(chromosome, tbl.Np$chrom)[1])+(length(grep(chromosome, tbl.Np$chrom)))),]
   tbl.Np.Chrom.Sub <- subset(tbl.Np.Chrom,  start.loc < start & end> end.loc)
 
-  NarrowTrack <- DataFrameAnnotationTrack("NarrowTrack", tbl.np.chrom.sub, color="red", displayMode="SQUISHED")
-  BroadTrack <- DataFrameAnnotationTrack("BroadTrack", tbl.bp.chrom.sub, color="green", displayMode="SQUISHED")
+  NarrowTrack <- DataFrameAnnotationTrack("NarrowTrack", tbl.Np.Chrom.Sub, color="red", displayMode="SQUISHED")
+  BroadTrack <- DataFrameAnnotationTrack("BroadTrack", tbl.Bp.Chrom.Sub, color="green", displayMode="SQUISHED")
   displayTrack(igv, NarrowTrack)
   displayTrack(igv, BroadTrack)
   
