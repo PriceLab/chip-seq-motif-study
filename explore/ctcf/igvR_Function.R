@@ -71,7 +71,7 @@ test_igvBam <- function()
   checkTrue(c("igvAnnotationTrack") %in% is(BroadpTrack))
 }
   
-if(!interative())
+if(!interative()) #you can run tests from terminal
   runTests()
 
 
