@@ -59,6 +59,8 @@ test_igvBam <- function()
   message(sprintf("--- test_igvBam"))
   
   FileBam="GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
+  checkTrue(file.exists(FileBam))
+  
   tf="CTCF"
   chromosome= "chr11"
   narrowPeakFilefromMACS2= "ctcf__peaks.narrowPeak"
@@ -66,7 +68,6 @@ test_igvBam <- function()
   
   igvBam(FileBam, tf, chromosome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
   
-  checkTrue(file.exists(FileBam))
   checkTrue(c("igvAnnotationTrack") %in% is(NarrowpTrack))
   checkTrue(c("igvAnnotationTrack") %in% is(BroadpTrack))
 }
