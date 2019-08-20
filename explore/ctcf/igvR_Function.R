@@ -3,7 +3,7 @@ runTests<- function()
   test_igvBam()
 }
 
-igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
+igvBam <- function(FileBam, tf, chromosome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
 {
 
   library(RUnit)
@@ -18,14 +18,14 @@ igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFil
   
   unzippedTables <- lapply (c(narrowPeakFilefromMACS2,broadPeakFilefromMACS2), read.table)
   tables <- lapply(unzippedTables,as.data.frame)
-  tbl.np <- tables[[1]]
-  tbl.bp <- tables[[2]]
-  colnames(tbl.np) <- c("chrom", "start", "end", "name", "score","width")
-  colnames(tbl.bp) <- c("chrom", "start", "end", "name", "score", "width")
+  tbl.Np <- tables[[1]]
+  tbl.Bp <- tables[[2]]
+  colnames(tbl.Np) <- c("chrom", "start", "end", "name", "score","width")
+  colnames(tbl.Bp) <- c("chrom", "start", "end", "name", "score", "width")
   
   
-  tbl.bp.chrom <- tbl.bp[(grep(chromosome, tbl.bp$chrom)[1]):((grep(chromosome, tbl.bp$chrom)[1])+(length(grep(chromosome, tbl.bp$chrom)))),]
-  tbl.bestBroad.Chrom <-subset(tbl.bp.chrom, score == max(tbl.bp.chrom$score))
+  tbl.Bp.Chrom <- tbl.bp[(grep(chromosome, tbl.Bp$chrom)[1]):((grep(chromosome, tbl.Bp$chrom)[1])+(length(grep(chromosome, tbl.Bp$chrom)))),]
+  tbl.BestBroad.Chrom <-subset(tbl.Bp.Chrom, score == max(tbl.bp.chrom$score))
   
   
   start.loc.Specific= tbl.bestBroad.Chrom [1,'start']
@@ -33,15 +33,15 @@ igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFil
   end.loc.Specific= tbl.bestBroad.Chrom [1,'end']
   end.loc=end.loc.Specific+5000
     
-  tbl.bp.chrom.sub <- subset(tbl.bp.chrom, start.loc < start & end> end.loc)
+  tbl.Bp.Chrom.Sub <- subset(tbl.bp.chrom, start.loc < start & end> end.loc)
   
-  tbl.np.chrom <- tbl.np[(grep(chromosome, tbl.np$chrom)[1]): ((grep(chromosome, tbl.np$chrom)[1])+(length(grep(chromosome, tbl.np$chrom)))),]
-  tbl.np.chrom.sub <- subset(tbl.np.chrom,  start.loc < start & end> end.loc)
+  tbl.Np.Chrom <- tbl.Np[(grep(chromosome, tbl.Np$chrom)[1]): ((grep(chromosome, tbl.Np$chrom)[1])+(length(grep(chromosome, tbl.Np$chrom)))),]
+  tbl.Np.Chrom.Sub <- subset(tbl.Np.Chrom,  start.loc < start & end> end.loc)
 
-  NarrowpTrack <- DataFrameAnnotationTrack("NarrowpTrack", tbl.np.chrom.sub, color="red", displayMode="SQUISHED")
-  BroadpTrack <- DataFrameAnnotationTrack("BroadpTrack", tbl.bp.chrom.sub, color="green", displayMode="SQUISHED")
-  displayTrack(igv, NarrowpTrack)
-  displayTrack(igv, BroadpTrack)
+  NarrowTrack <- DataFrameAnnotationTrack("NarrowTrack", tbl.np.chrom.sub, color="red", displayMode="SQUISHED")
+  BroadTrack <- DataFrameAnnotationTrack("BroadTrack", tbl.bp.chrom.sub, color="green", displayMode="SQUISHED")
+  displayTrack(igv, NarrowTrack)
+  displayTrack(igv, BroadTrack)
   
   
   
@@ -64,7 +64,7 @@ test_igvBam <- function()
   narrowPeakFilefromMACS2= "ctcf__peaks.narrowPeak"
   broadPeakFilefromMACS2= "ctcf__peaks.broadPeak"
   
-  igvBam(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
+  igvBam(FileBam, tf, chromosome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
   
   checkTrue(file.exists(FileBam))
   checkTrue(c("igvAnnotationTrack") %in% is(NarrowpTrack))
