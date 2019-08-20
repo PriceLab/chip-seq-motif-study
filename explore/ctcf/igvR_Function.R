@@ -1,9 +1,7 @@
-#these parameter values are used for the .bam file I've been using for practice
-FileBam="GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
-tf="CTCF"
-chromosome= "chr11"
-narrowPeakFilefromMACS2= "ctcf__peaks.narrowPeak"
-broadPeakFilefromMACS2= "ctcf__peaks.broadPeak"
+runTests<- function()
+{
+  test_igvBam()
+}
 
 igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
 {
@@ -17,7 +15,6 @@ igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFil
   igv <- igvR() #connects to browser
   setGenome(igv, "hg19")
   showGenomicRegion(igv, tf)
-  stopifnot(file.exists(FileBam))
   
   unzippedTables <- lapply (c(narrowPeakFilefromMACS2,broadPeakFilefromMACS2), read.table)
   tables <- lapply(unzippedTables,as.data.frame)
@@ -55,7 +52,28 @@ igvBam <- function(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFil
   track <- GenomicAlignmentTrack("DNAse", x)
   displayTrack(igv, track)
 }
-#tests
-checkTrue(c("igvAnnotationTrack") %in% is(NarrowpTrack))
-checkTrue(c("igvAnnotationTrack") %in% is(BroadpTrack))
+
+#test
+test_igvBam <- function()
+{
+  message(sprintf("--- test_igvBam"))
+  
+  FileBam="GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
+  tf="CTCF"
+  chromosome= "chr11"
+  narrowPeakFilefromMACS2= "ctcf__peaks.narrowPeak"
+  broadPeakFilefromMACS2= "ctcf__peaks.broadPeak"
+  
+  igvBam(FileBam, tf, chromsome, narrowPeakFilefromMACS2, broadPeakFilefromMACS2)
+  
+  checkTrue(file.exists(FileBam))
+  checkTrue(c("igvAnnotationTrack") %in% is(NarrowpTrack))
+  checkTrue(c("igvAnnotationTrack") %in% is(BroadpTrack))
+}
+  
+if(!interative())
+  runTests()
+
+
+
 
