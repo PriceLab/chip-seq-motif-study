@@ -6,7 +6,7 @@ test_identifyPeaks <- function()
 {
 
    bamFile <- "yourBamFile.bam"
-   tbls <- identifyPeaks(bamfile, chrom="chr19", start=10000000, end=12000000)
+   tbls <- identifyPeaks(bamFile, chrom="chr19", start=10000000, end=12000000)
    checkTrue(is.list(tbls))
    checkTrue(all(c("narrow", "broad",) %in% names(tbls)))
 
