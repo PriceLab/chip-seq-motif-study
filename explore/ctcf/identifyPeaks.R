@@ -1,4 +1,4 @@
-identifyPeaks<- function(bamFile, chrom, start.loc, end.loc)
+identifyPeaks<- function(bamFile, chrom, start.loc, end.loc, newBamFileName)
 {
   if (exists("sliceBamFile")){
     sliceBamFile(bamFile, chrom, start.loc, end.loc, newBamFileName)
