@@ -31,27 +31,4 @@ identifyPeaks<- function(bamFile, chrom, start.loc, end.loc)
       names(tbls)<- c("narrow","broad")
       return(tbls) 
     }
-}
-  
-###
-sliceBamFile <- function(bamFile, chrom, start.loc=NA, end.loc=NA, newBamFileName)
-{
-  if(is.na(start.loc)){
-    start.loc<- 1
   }
-  
-  if(is.na(end.loc)){
-    truncated.chromosome.name <- as.character(sub("chr", "", chrom))
-    end.loc <- org.Hs.egCHRLENGTHS[[truncated.chromosome.name]]
-  }
-  which <- GRanges(seqnames = chrom, ranges = IRanges(start.loc, end.loc))
-  what <- c("rname", "strand", "pos", "qwidth", "seq")
-  param <- ScanBamParam(which = which, what=what)
-  
-  bam <- scanBam(bamFile, param=param)
-  
-  filterBam(bamFile, newBamFileName, param=param)
-  
-} # sliceBamFile
-
-  
