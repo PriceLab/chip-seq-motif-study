@@ -4,6 +4,13 @@ identifyPeaks<- function(bamFile, chrom, start, end)
   library(RUnit)
   library(org.Hs.eg.db)
   
+  if (exists("sliceBamFile")){
+    sliceBamFile(bamFile, chrom, start, end, newBamFileName)
+  } else {
+    source("sliceBamFile.R")
+    sliceBamFile(bamFile, chrom, start, end, newBamFileName)
+  }
+  
   newBamFileName<-sprintf(("slice%s"),bamFile)
   if (exists("sliceBamFile")){
     sliceBamFile(bamFile, chrom, start, end, newBamFileName)
