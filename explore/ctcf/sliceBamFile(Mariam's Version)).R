@@ -4,18 +4,15 @@ library(org.Hs.eg.db)
 
 #----------------------------------------------------------------------------------------------------
 runTests <- function()
-{
-  test_sliceBamFile()
-  
-} # runTests
+  test_sliceBamFile() # runTests
 #----------------------------------------------------------------------------------------------------
 sliceBamFile <- function(bamFile, chrom, start=NA, end=NA, newBamFileName)
 {
-  if(is.na(start)){
+  if(is.na(start))
     start<- 1
-  }
   
-  if(is.na(end)){
+  if(is.na(end))
+  {
     truncated.chromosome.name <- as.character(sub("chr", "", chrom))
     end <- org.Hs.egCHRLENGTHS[[truncated.chromosome.name]]
   }
@@ -27,7 +24,7 @@ sliceBamFile <- function(bamFile, chrom, start=NA, end=NA, newBamFileName)
   
   filterBam(bamFile, newBamFileName, param=param)
   
-} # sliceBamFile
+  } # sliceBamFile
 #----------------------------------------------------------------------------------------------------
 test_sliceBamFile<- function()
 {
@@ -42,7 +39,7 @@ test_sliceBamFile<- function()
   sliceBamFile(bamFile,"chr19", 1, 59128983, sliced.file)
   checkTrue(file.exists(sliced.file))
   
-} # test_sliceBamFile
+  } # test_sliceBamFile
 #----------------------------------------------------------------------------------------------------
 if(!interactive())
   runTests()
