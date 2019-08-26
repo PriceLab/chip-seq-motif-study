@@ -1,5 +1,5 @@
 # test_identifyPeaks.R
-# source("identifPeaks.R")
+# source("identifyPeaks.R")
 library(RUnit)
 #------------------------------------------------------------------------------------------------------------------------
 test_identifyPeaks <- function()
