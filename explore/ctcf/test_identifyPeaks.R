@@ -12,7 +12,7 @@ test_identifyPeaks <- function()
 {
    bamFile <- "GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
 
-   tbls <- identifyPeaks(bamFile, chrom="chr19", start=10000000, end=12000000)
+   tbls <- identifyPeaks(bamFile, chrom="chr19", start=10000000, end=51190311)
    checkTrue(is.list(tbls))
    checkTrue(all(c("narrow", "broad") %in% names(tbls)))
 
