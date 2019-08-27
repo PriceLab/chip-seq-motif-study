@@ -10,7 +10,7 @@ runTests <- function()
 #------------------------------------------------------------------------------------------------------------------------
 test_identifyPeaks <- function()
 {
-   bamFile <- "yourBamFile.bam"   # shouldn't this be something like "GSM749704.chr19.bam"?
+   bamFile <- "GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
 
    tbls <- identifyPeaks(bamFile, chrom="chr19", start=10000000, end=12000000)
    checkTrue(is.list(tbls))
