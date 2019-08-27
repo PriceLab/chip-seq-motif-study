@@ -1,11 +1,17 @@
 # test_identifyPeaks.R
-# source("identifyPeaks.R")
+source("identifyPeaks.R")
 library(RUnit)
+#------------------------------------------------------------------------------------------------------------------------
+runTests <- function()
+{
+   test_identifyPeaks()
+
+} # runTests
 #------------------------------------------------------------------------------------------------------------------------
 test_identifyPeaks <- function()
 {
+   bamFile <- "yourBamFile.bam"   # shouldn't this be something like "GSM749704.chr19.bam"?
 
-   bamFile <- "yourBamFile.bam"
    tbls <- identifyPeaks(bamFile, chrom="chr19", start=10000000, end=12000000)
    checkTrue(is.list(tbls))
    checkTrue(all(c("narrow", "broad",) %in% names(tbls)))
