@@ -32,7 +32,6 @@ identifyPeaks<- function(bamFile, chrom, start, end)
 #------------------
 
 # test_identifyPeaks.R
-source("identifyPeaks.R")
 library(RUnit)
 #------------------------------------------------------------------------------------------------------------------------
 runTests <- function()
