@@ -1,31 +1,53 @@
-# identifyPeaks.R:  call dockerized macs2, on the specified slice of a bamfile, return a list of narrow and broad peaks
-#------------------------------------------------------------------------------------------------------------------------
+# sliceBamFile.R: extract a subset of a bam file
+# developed originally to create a small yet representative bam file for the
+# empirical motif-matching/ChIP-seq project
+#----------------------------------------------------------------------------------------------------
 library(Rsamtools)
 library(RUnit)
-library(org.Hs.eg.db)
-#------------------------------------------------------------------------------------------------------------------------
-identifyPeaks<- function(bamFile, chrom, start, end)
+#----------------------------------------------------------------------------------------------------
+runTests <- function()
 {
-  truncated.bamFile.name <- as.character(sub(".bam","", bamFile))
+   test_sliceBamFile()
+
+} # runTests
+#----------------------------------------------------------------------------------------------------
+sliceBamFile <- function(bamFile, chrom, start.loc=NA, end.loc=NA, newBamFileName)
+{
   
-  broadpeaks.cmd <- sprintf("docker run -v $PWD:/data/ fooliu/macs2 callpeak -t /data/%s -c --broad -g hs --broad-cutoff 0.1 -n %s --outdir /data/",
-                            bamFile,truncated.bamFile.name)
+  if(is.na(start.loc)){
+    start.loc<- 1
+  }
   
-  system(broadpeaks.cmd)
-  narrowpeaks.cmd <- sprintf("docker run -v $PWD:/data/ fooliu/macs2 callpeak -t /data/%s -c  -n %s --outdir /data/",
-                             bamFile,truncated.bamFile.name)
-  system(narrowpeaks.cmd)
+  if(is.na(end.loc)){
+    truncated.chromosome.name <- as.character(sub("chr", "", chrom))
+    end.loc <- org.Hs.egCHRLENGTHS[[truncated.chromosome.name]]
+  }
   
-  unzippedTables<- lapply(sprintf(c("%s_peaks.narrowPeak","%s_peaks.broadPeak"),truncated.bamFile.name), read.table)
-  tables <- lapply(unzippedTables,as.data.frame)
-  tbl.narrow <- tables[[1]]
-  tbl.broad <- tables[[2]]
-  colnames(tbl.narrow) <- c("chrom", "start.loc", "end.loc", "name", "score","width")
-  colnames(tbl.broad) <- c("chrom", "start.loc", "end.loc", "name", "score", "width")
-  
-  tbls<- list(tbl.narrow, tbl.broad)
-  names(tbls)<- c("narrow","broad")
-  return(tbls)
-  
-} # identifyPeaks
-#------------------
+  which <- GRanges(seqnames = chrom, ranges = IRanges(start.loc, end.loc))
+  what <- c("rname", "strand", "pos", "qwidth", "seq")
+  param <- ScanBamParam(which = which, what=what)
+
+  bam <- scanBam(bamFile, param=param)
+
+  filterBam(bamFile, newBamFileName, param=param)
+
+} # sliceBamFile
+#----------------------------------------------------------------------------------------------------
+test_sliceBamFile<- function()
+{
+  message(sprintf("--- test_sliceBamFile"))
+
+  bamFile <- "GSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
+  indexFile <- sprintf("%s.bai", bamFile)
+  checkTrue(file.exists(bamFile))
+  checkTrue(file.exists(indexFile))
+
+  sliced.file <- "chr19-ctcf.bam"
+  sliceBamFile(bamFile,"chr19", 1, 59128983, sliced.file)
+  checkTrue(file.exists(sliced.file))
+
+} # test_sliceBamFile
+
+#----------------------------------------------------------------------------------------------------
+if(!interactive())
+   runTests()
