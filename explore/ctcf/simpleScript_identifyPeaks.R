@@ -20,7 +20,7 @@ setGenome(igv, "hg19")
 showGenomicRegion(igv, tf) 
 idx <- indexBam(bamFile)
 
-identifyPeaks(bamFile, chrom, start, end) #gets me my narrowpeak & broadpeak files 
+identifyPeaks(bamFile, chrom, start, end) #gets my narrowpeak & broadpeak files 
 narrowTrack <- DataFrameAnnotationTrack("narrowTrack", tbl.narrow, color="red", displayMode="SQUISHED")
 broadTrack <- DataFrameAnnotationTrack("broadTrack", tbl.broad, color="green", displayMode="SQUISHED")
 displayTrack(igv, narrowTrack)
