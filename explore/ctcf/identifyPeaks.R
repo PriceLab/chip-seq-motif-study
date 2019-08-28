@@ -4,9 +4,6 @@ library(Rsamtools)
 library(RUnit)
 library(org.Hs.eg.db)
 #------------------------------------------------------------------------------------------------------------------------
-if(!exists("sliceBamFile"))
-  source("sliceBamFile.R")
-#------------------------------------------------------------------------------------------------------------------------
 identifyPeaks<- function(bamFile, chrom, start, end)
 {
   
