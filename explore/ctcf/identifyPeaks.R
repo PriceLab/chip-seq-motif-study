@@ -4,9 +4,11 @@ library(Rsamtools)
 library(RUnit)
 library(org.Hs.eg.db)
 #------------------------------------------------------------------------------------------------------------------------
-identifyPeaks<- function(bamFile, chrom, start, end)
+if(!exists("findBindingSites"))
+  source("findBindingSites.R")
+#------------------------------------------------------------------------------------------------------------------------
+identifyPeaks<- function(bamFile, chrom, start, end, motifName)
 {
-  
   truncated.bamFile.name <- as.character(sub(".bam","", bamFile))
   
   broadpeaks.cmd <- sprintf("docker run -v $PWD:/data/ fooliu/macs2 callpeak -t /data/%s -c --broad -g hs --broad-cutoff 0.1 -n %s --outdir /data/",
@@ -17,23 +19,22 @@ identifyPeaks<- function(bamFile, chrom, start, end)
                              bamFile,truncated.bamFile.name)
   system(narrowpeaks.cmd)
   
+  tbl.hits<-findBindingSites(motifName, chrom, start, end) 
+  
   unzippedTables<- lapply(sprintf(c("%s_peaks.narrowPeak","%s_peaks.broadPeak"),truncated.bamFile.name), read.table)
   tables <- lapply(unzippedTables,as.data.frame)
   tbl.narrow <- tables[[1]]
   tbl.broad <- tables[[2]]
-  colnames(tbl.narrow) <- c("chrom", "start.loc", "end.loc", "name", "score","width")
-  colnames(tbl.broad) <- c("chrom", "start.loc", "end.loc", "name", "score", "width")
+  colnames(tbl.narrow) <- c("chrom", "start.loc", "end.loc", "name", "score","width", "foldChange", "pValue","qValue", "summitPosition")
+  colnames(tbl.broad) <- c("chrom", "start.loc", "end.loc", "name", "score", "width","foldChange", "pValue","qValue") #signal value is the peak intensity of that peak call.
   
-  tbls<- list(tbl.narrow, tbl.broad)
-  names(tbls)<- c("narrow","broad")
+  tbls<- list(tbl.narrow, tbl.broad, tbl.hits)
+  names(tbls)<- c("narrow","broad", "motifHits")
   return(tbls)
   
 } # identifyPeaks
-#------------------
-
-# test_identifyPeaks.R
-library(RUnit)
 #------------------------------------------------------------------------------------------------------------------------
+# test_identifyPeaks.R
 runTests <- function()
 {
   test_identifyPeaks()
@@ -42,11 +43,9 @@ runTests <- function()
 #------------------------------------------------------------------------------------------------------------------------
 test_identifyPeaks <- function()
 {
-  bamFile <- "sliceGSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
-  
-  tbls <- identifyPeaks(bamFile, chrom="chr19", start=53160025, end=56170311)
+  tbls <- identifyPeaks("sliceGSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam", chrom="chr19", start=53160025, end=56170311, motifName="MA0139.1")
   checkTrue(is.list(tbls))
-  checkTrue(all(c("narrow", "broad") %in% names(tbls)))
+  checkTrue(all(c("narrow", "broad","motifHits") %in% names(tbls)))
   
   tbl.narrow <- tbls$narrow
   tbl.broad <- tbls$broad
@@ -56,8 +55,6 @@ test_identifyPeaks <- function()
   
   checkTrue(nrow(tbl.narrow) > 0)
   checkTrue(nrow(tbl.broad) > 0)
-  
-  # many more checks to come
-  
+    
 } # test_identifyPeaks
-#-----------------------
+#------------------------------------------------------------------------------------------------------------------------
