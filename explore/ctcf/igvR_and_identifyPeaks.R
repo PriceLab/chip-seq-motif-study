@@ -15,13 +15,13 @@ if(!exists("findBindingSites"))
 bamFile="sliceGSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam"
 tf="CTCF"
 chrom= "chr19"
-start=53160025
-end=56170311
+start=8993839
+end=52184575
 motifName="MA0139.1"
 
 igv <- igvR() #connects to browser
 setGenome(igv, "hg19")
-showGenomicRegion(igv, "chr19:1-59,128,983") 
+showGenomicRegion(igv, "chr19:43184575-52184575") 
 idx <- indexBam(bamFile)
 
 tbls<-identifyPeaks(bamFile, chrom, start, end, motifName) #gets my narrowpeak & broadpeak files 
