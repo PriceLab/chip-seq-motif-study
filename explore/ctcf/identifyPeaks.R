@@ -32,29 +32,32 @@ identifyPeaks<- function(bamFile, chrom, start, end, motifName)
   names(tbls)<- c("narrow","broad", "motifHits")
   return(tbls)
   
-} # identifyPeaks
+  } # identifyPeaks
 #------------------------------------------------------------------------------------------------------------------------
 # test_identifyPeaks.R
 runTests <- function()
 {
   test_identifyPeaks()
   
-} # runTests
+  } # runTests
 #------------------------------------------------------------------------------------------------------------------------
 test_identifyPeaks <- function()
 {
+  message(sprintf("--- test_identifyPeaks"))
   tbls <- identifyPeaks("sliceGSM749704_hg19_wgEncodeUwTfbsGm12878CtcfStdAlnRep1.bam", chrom="chr19", start=53160025, end=56170311, motifName="MA0139.1")
   checkTrue(is.list(tbls))
   checkTrue(all(c("narrow", "broad","motifHits") %in% names(tbls)))
   
   tbl.narrow <- tbls$narrow
   tbl.broad <- tbls$broad
-  
+  tbl.hits <- tbls$motifHits
+
   checkTrue(is.data.frame(tbl.narrow))
   checkTrue(is.data.frame(tbl.broad))
-  
+  checkTrue(is.data.frame(tbl.hits))
+
   checkTrue(nrow(tbl.narrow) > 0)
   checkTrue(nrow(tbl.broad) > 0)
-    
-} # test_identifyPeaks
+  checkTrue(nrow(tbl.hits) > 0)
+  } # test_identifyPeaks
 #------------------------------------------------------------------------------------------------------------------------
