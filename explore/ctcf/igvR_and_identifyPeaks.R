@@ -18,10 +18,16 @@ chrom= "chr19"
 start=8993839
 end=52184575
 motifName="MA0139.1"
+interestingSpot1<-"chr19:42,257,038-42,258,277"
+interestingSpot2<-"chr19:43,033,314-43,034,146"
+interestingSpot3<-"chr19:19,256,647-19,257,529"
+interestingSpot4<-"chr19:42,210,396-42,211,437"
+interestingSpot5<-"chr19:35,632,204-35,634,113"
+interestingSpot6<-"chr19:42,937,212-42,945,062"
 
 igv <- igvR() #connects to browser
 setGenome(igv, "hg19")
-showGenomicRegion(igv, "chr19:43184575-52184575") 
+showGenomicRegion(igv, interestingSpot1) 
 idx <- indexBam(bamFile)
 
 tbls<-identifyPeaks(bamFile, chrom, start, end, motifName) #gets my narrowpeak & broadpeak files 
@@ -29,8 +35,10 @@ tbl.narrow <- tbls[[1]]
 tbl.broad <- tbls[[2]]
 tbl.hits <- tbls[[3]]
 
-narrowTrack <- DataFrameAnnotationTrack("narrow", tbl.narrow, color="red", displayMode="SQUISHED")
-broadTrack <- DataFrameAnnotationTrack("broad", tbl.broad, color="green", displayMode="SQUISHED")
+tbl.narrow[,1]<-as.character(tbl.narrow[,1])
+tbl.broad[,1]<-as.character(tbl.broad[,1])
+narrowTrack <- DataFrameQuantitativeTrack("narrow", tbl.narrow[, c("chrom", "start.loc", "end.loc", "score")], color="red",autoscale=TRUE)
+broadTrack <- DataFrameQuantitativeTrack("broad", tbl.broad[, c("chrom", "start.loc", "end.loc", "score")], color="green",autoscale=TRUE)
 displayTrack(igv, narrowTrack)
 displayTrack(igv, broadTrack)
 
@@ -51,5 +59,5 @@ x <- readGAlignments(bamFile, use.names=TRUE, param=param)
 pileupTrack <- GenomicAlignmentTrack("ChIP-Seq PileUp", x)
 displayTrack(igv, pileupTrack)
 
-motifTrack <- DataFrameQuantitativeTrack("MA0139.1", tbl.hits[, c("chrom", "motifStart", "motifEnd", "motifRelativeScore")], color="blue",autoscale=TRUE,)
+motifTrack <- DataFrameQuantitativeTrack("MA0139.1", tbl.hits[, c("chrom", "motifStart", "motifEnd", "motifRelativeScore")], color="blue",autoscale=TRUE)
 displayTrack(igv, motifTrack)
