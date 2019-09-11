@@ -2,6 +2,7 @@ library(Rsamtools)
 library(org.Hs.eg.db)
 library(ChIPseqMotifMatch)
 library(RUnit)
+source("sliceBamFile.R")
 #------------
 test.bamFilename <- system.file(package="ChIPseqMotifMatch", "extdata", "GSM749704_hg19_Ctcf_chr19.bam")
 idx <- indexBam(test.bamFilename)
